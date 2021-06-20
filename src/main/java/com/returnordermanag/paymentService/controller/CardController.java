@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.returnordermanag.paymentService.exception.CardNotFoundException;
 import com.returnordermanag.paymentService.service.CardService;
 
+import io.swagger.annotations.ApiOperation;
+
+@ApiOperation(value="/card", tags="Card Controller")
 @RestController
 public class CardController {
 	

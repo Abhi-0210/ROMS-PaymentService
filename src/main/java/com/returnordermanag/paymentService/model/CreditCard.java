@@ -3,12 +3,12 @@ package com.returnordermanag.paymentService.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Data
+@ApiModel(description="Credit Card Model")
 public class CreditCard {
 
 	@Id
