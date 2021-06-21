@@ -34,8 +34,6 @@ class TestController {
 		
 		mockMvc.perform(get("/card/{cardNumber}/{charge}",cardnumber,amt)).andExpect(status().isOk());
 		
-		
-		
 	}
 	
 	@Test

@@ -2,6 +2,9 @@ package com.returnordermanag.paymentService.exception;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Errormsg {
 	 private String message;
 	 private List<String> details;

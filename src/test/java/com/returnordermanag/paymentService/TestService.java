@@ -32,13 +32,13 @@ class TestService {
 	@Test
 	void testProcessPayment() {
 		
-		card=new CreditCard(1234567890,4000);
-		when(repo.findByCardNumber(1234567L)).thenReturn(card);
+		card=new CreditCard(4876974648769746L,4000);
+		when(repo.findByCardNumber(4876974648769746L)).thenReturn(card);
 		when(repo.save(any(CreditCard.class))).thenReturn(card);
 		
 		
-		assertEquals(2000.0,service.processPayment(1234567L, 2000),0.00);
-		assertEquals(-1,service.processPayment(1234567L, 5000),0.0);
+		assertEquals(2500.0,service.processPayment(4876974648769746L, 1500));
+		assertEquals(-1,service.processPayment(4876974648769746L, 6000));
 		
 	}
 }

@@ -30,19 +30,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(CardNotFoundException.class)
 	public final ResponseEntity<Object> handleUserNotFoundException(CardNotFoundException ex, WebRequest request) {
+		System.out.println("IN global");
 		List<String> details = new ArrayList<>();
 		details.add(ex.getLocalizedMessage());
 		Errormsg error = new Errormsg("Card Not Found", details);
 		return new ResponseEntity(error, HttpStatus.NOT_FOUND);
 	}
 
-	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
-		List<String> details = new ArrayList<>();
-		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
-			details.add(error.getDefaultMessage());
-		}
-		Errormsg error = new Errormsg("Validation Failed", details);
-		return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
-	}
+	
 }
